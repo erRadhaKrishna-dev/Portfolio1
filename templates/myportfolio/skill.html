@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<style>
+
+
+.skill-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.4s;
+}
+.circle .progress-circle {
+  stroke: #00c6ff;  /* instead of gradient */
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Circle */
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+.circle svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke: rgba(12, 135, 216, 0.1);
+}
+
+.circle .progress-circle {
+  stroke: #00c6ff;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: 2s ease;
+}
+
+/* Percentage */
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+}
+
+
+
+
+</style>
+<section id="skills" class="skills-section mt-5 py-5">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-white">🚀 My Skills</h2>
+      <p class="text-light">Technologies I use to build modern web applications</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Skill Item -->
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="90">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">90%</div>
+          </div>
+          <h6 class="text-white mt-3">HTML</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="85">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">85%</div>
+          </div>
+          <h6 class="text-white mt-3">CSS / Bootstrap</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="75">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">75%</div>
+          </div>
+          <h6 class="text-white mt-3">JavaScript</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="70">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">70%</div>
+          </div>
+          <h6 class="text-white mt-3">React</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="85">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">85%</div>
+          </div>
+          <h6 class="text-white mt-3">Python</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="80">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">80%</div>
+          </div>
+          <h6 class="text-white mt-3">Django</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="75">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">75%</div>
+          </div>
+          <h6 class="text-white mt-3">REST API</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="skill-card text-center">
+          <div class="circle" data-percent="70">
+            <svg>
+              <circle cx="60" cy="60" r="50"></circle>
+              <circle cx="60" cy="60" r="50" class="progress-circle"></circle>
+            </svg>
+            <div class="number">70%</div>
+          </div>
+          <h6 class="text-white mt-3">SQL</h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const circles = document.querySelectorAll(".circle");
+
+  const animateSkills = () => {
+    circles.forEach(circle => {
+      let percent = circle.getAttribute("data-percent");
+      let progress = circle.querySelector(".progress-circle");
+
+      let radius = 50;
+      let circumference = 2 * Math.PI * radius;
+
+      progress.style.strokeDasharray = circumference;
+      progress.style.strokeDashoffset = circumference;
+
+      let offset = circumference - (percent / 100) * circumference;
+
+      setTimeout(() => {
+        progress.style.strokeDashoffset = offset;
+      }, 200);
+    });
+  };
+
+  // 🔥 Better Scroll Detection (Intersection Observer)
+  const section = document.querySelector("#skills");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSkills();
+        observer.disconnect(); // run only once
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(section);
+
+});
+
+console.log("hello")
+</script>
+
+
+
+{% endblock %}

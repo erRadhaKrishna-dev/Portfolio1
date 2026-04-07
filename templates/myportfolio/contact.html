@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block childpage %}
+<style>
+
+
+
+.contact-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+}
+
+.form-control {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.form-control::placeholder {
+  color: #ccc;
+}
+
+.form-control:focus {
+  background: transparent;
+  color: white;
+  border-color: #00c6ff;
+  box-shadow: none;
+}
+</style>
+
+<section class="contact-section py-5 mt-5">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold text-white">📩 Contact Me</h2>
+      <p class="text-light">Feel free to reach out for projects or collaboration</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+
+        <div class="contact-card p-4">
+
+          {% if success %}
+            <div class="alert alert-success">
+              ✅ Message sent successfully!
+            </div>
+          {% endif %}
+
+          <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+
+            <div class="mb-3">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            </div>
+
+            <div class="mb-3">
+              <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+              Send Message 🚀
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% endblock %}

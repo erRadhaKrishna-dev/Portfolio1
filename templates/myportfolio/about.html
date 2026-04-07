@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+
+<style>
+	.card-1 {
+		border: 1px solid rgba(14, 239, 255, 0.18);
+		background: rgba(14, 239, 255, 0.02);
+		border-radius: 12px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 22px;
+		min-height: 170px;
+		transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+	}
+
+	.card-1:hover {
+		transform: translateY(-8px);
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 6px 18px rgba(14, 239, 255, 0.08);
+		border-color: #0ef;
+	}
+
+	@media (max-width: 768px) {
+		.card-1 {
+			margin: 0 10px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		.card-1 {
+			margin: 0 8px;
+			padding: 16px;
+			min-height: 150px;
+		}
+	}
+</style>
+</head>
+
+<body>
+	<div class="container-fluid mt-5">
+		<div class="row" id="about">
+			<div class="col-sm-10 mx-auto">
+				<h2 class="mx-auto text-center text-mycolor4 title">About<span class="text-mycolor2"> Me</span></h2>
+				<div class="about-text text-mycolor4">
+					<h4>Full Stack Developer & UI/UX Designer</h4>
+					<p>
+						I'm a passionate Full Stack Developer with a strong foundation in both front-end and back-end
+						technologies.
+						I specialize in building responsive, user-friendly, and high-performing web applications that
+						solve real-world problems.
+						With hands-on experience in HTML, CSS, JavaScript, Python, Django, SQL, and modern frameworks, I
+						deliver complete web solutions tailored to client needs.
+					</p>
+
+					<p style="margin-top: 16px;">
+						<strong style="color:#0ef;">My Expertise:</strong><br>
+						• Crafting intuitive UI/UX designs with modern design principles<br>
+						• Developing dynamic back-end systems with Python & Django<br>
+						• Building responsive web interfaces for all devices<br>
+						• Database design and optimization with SQL<br>
+						• API development and integration<br>
+						• Code optimization and performance enhancement
+					</p>
+
+					<div class="about-meta">
+						<div class="about-badge">
+							<i class="fa-solid fa-code"></i> Full Stack
+						</div>
+						<div class="about-badge">
+							<i class="fa-solid fa-database"></i> Django/Python
+						</div>
+						<div class="about-badge">
+							<i class="fa-solid fa-mobile"></i> Responsive Design
+						</div>
+						
+						<div class="about-cta">
+							<a href="#contact-form" class="btn-box">Hire Me</a>
+							<a href="{% static 'documents/README.md' %}" class="btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">Download CV</a>
+						</div>
+
+						<div class="home-sci" style="margin-top:18px;">
+							<a href="https://www.facebook.com/share/15hEcUUvTci/" aria-label="facebook"><i
+									class="fa-brands fa-facebook"></i></a>
+							<a href="https://wa.me/qr/IOX6S7NGMEL6D1" aria-label="whatsapp"><i
+									class="fa-brands fa-whatsapp"></i></a>
+							<a href="https://www.instagram.com/jitin6969/" aria-label="instagram"><i
+									class="fa-brands fa-instagram"></i></a>
+							<a href="https://www.linkedin.com/in/radha-krishna-98a86432a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+								aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Professional Summary Section -->
+		<div class="row mt-5"
+			style="background: rgba(0,233,245,0.05); padding: 40px 0; border-top: 1px solid rgba(0,233,245,0.2); border-bottom: 1px solid rgba(0,233,245,0.2);">
+			<div class="col-sm-10 mx-auto">
+				<h2 class="text-center text-mycolor4 mb-4">Why Work With Me?</h2>
+				<div class="row text-center">
+					<div class="col-md-4 mb-4 card-1">
+						<i class="fa-solid fa-rocket text-mycolor2" style="font-size:32px; margin-bottom:12px;"></i>
+						<h5 class="text-mycolor4">Fast & Efficient</h5>
+						<p class="text-light">Quick turnaround times without compromising quality or code standards.</p>
+					</div>
+					<div class="col-md-4 mb-4 card-1">
+						<i class="fa-solid fa-handshake text-mycolor2" style="font-size:32px; margin-bottom:12px;"></i>
+						<h5 class="text-mycolor4">Collaborative</h5>
+						<p class="text-light">Clear communication and regular updates throughout the project lifecycle.
+						</p>
+					</div>
+					<div class="col-md-4 mb-4 card-1">
+						<i class="fa-solid fa-shield text-mycolor2" style="font-size:32px; margin-bottom:12px;"></i>
+						<h5 class="text-mycolor4">Reliable Support</h5>
+						<p class="text-light">Ongoing maintenance and support after project completion.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Stats Section -->
+		<div class="row mt-5" style="padding: 20px 0;">
+			<div class="col-sm-10 mx-auto">
+				<div class="row text-center">
+					<div class="col-6 col-md-3 card-1">
+						<div>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">50+</h3>
+							<p class="text-mycolor4">Projects Completed</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 card-1">
+						<div>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">30+</h3>
+							<p class="text-mycolor4">Happy Clients</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 card-1">
+						<div>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">5+</h3>
+							<p class="text-mycolor4">Years Experience</p>
+						</div>
+					</div>
+					<div class="col-6 col-md-3 card-1">
+						<div>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">100%</h3>
+							<p class="text-mycolor4">Client Satisfaction</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Tech Stack Section -->
+		<div class="row mt-5"
+			style="background: rgba(0,233,245,0.05); padding: 40px 0; border-top: 1px solid rgba(0,233,245,0.2);">
+			<div class="col-sm-10 mx-auto">
+				<h2 class="text-center text-mycolor4 mb-4">Tech Stack</h2>
+				<div class="row">
+					<div class="col-md-6">
+						<h5 class="text-mycolor2 mb-3"><i class="fa-solid fa-code"></i> Front-End</h5>
+						<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">HTML5</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">CSS3</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">JavaScript</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">Bootstrap</span>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h5 class="text-mycolor2 mb-3"><i class="fa-solid fa-server"></i> Back-End</h5>
+						<div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px;">
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">Python</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">Django</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">SQL</span>
+							<span class="about-badge btn-box"
+								style="background:transparent;border:1px solid #0ef;color:#0ef;">REST API</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Call to Action Section -->
+		<div class="row mt-5 mb-5" style="padding: 20px 0;">
+			<div class="col-sm-10 mx-auto text-center">
+				<h2 class="text-mycolor4 mb-4">Ready to Start Your Project?</h2>
+				<p class="text-muted mb-4" style="font-size: 16px;">Let's collaborate and create something amazing
+					together.</p>
+				<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+					<a href="#contact-form" class="btn-box">Get In Touch</a>
+					<a href="#services" class="btn-box"
+						style="background:transparent;border:1px solid #0ef;color:#0ef;">View My Services</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

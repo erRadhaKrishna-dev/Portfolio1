@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+<!--services section start-->
+    <div class="row mt-5 pt-5" id="services">
+        <h2 class="mx-auto text-center text-mycolor4 title">My<span class="text-mycolor2"> Services</span></h2>
+        <div class="col-sm-10  mx-auto mt-5">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/responsive.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-globe text-mycolor2"></i>
+                        <h3>Responsive Web Development</h3>
+                        <p>Modern responsive website built with HTML, CSS, JavaScript and Bootstrap framework for all devices.</p>
+                        <div class="service-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">BootStrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/ui.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-code text-mycolor2"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Beautiful and intuitive user interface design with modern design principles and user experience focus.</p>
+                        <div class="service-tags">
+                            <span class="tag">UI Design</span>
+                            <span class="tag">UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/python.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-brands fa-python text-mycolor2"></i>
+                        <h3>Python & Django Back-end</h3>
+                        <p>Full-stack backend development with Python, Django framework, and SQL database management solutions.</p>
+                        <div class="service-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/database.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-database text-mycolor2"></i>
+                        <h3>Database Management</h3>
+                        <p>Efficient database design, optimization, and management for reliable data storage and retrieval solutions.</p>
+                        <div class="service-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/web.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-globe text-mycolor2"></i>
+                        <h3>Full Web Development</h3>
+                        <p>Complete end-to-end web development solutions combining frontend, backend, and database technologies.</p>
+                        <div class="service-tags">
+                            <span class="tag">Full-stack</span>
+                            <span class="tag">Development</span>
+                            <span class="tag">Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/bugfix.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-bug text-mycolor2"></i>
+                        <h3>Bug Fixing & Support</h3>
+                        <p>Professional debugging and ongoing support services to ensure your applications run smoothly and reliably.</p>
+                        <div class="service-tags">
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Support</span>
+                            <span class="tag">Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--services section end-->
+
+{% endblock %}

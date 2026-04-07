@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Radha Krishna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            font-size: 13px;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Section Styles */
+        .resume-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background: #0066cc;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            font-size: 18px;
+        }
+        
+        /* Resume Item Styles */
+        .resume-item {
+            margin-bottom: 18px;
+            padding-left: 0;
+        }
+        
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .position, .degree {
+            font-weight: bold;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+        }
+        
+        .company, .institution {
+            font-size: 13px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+        
+        .duration {
+            font-size: 12px;
+            color: #999;
+            font-style: italic;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .duration i {
+            font-size: 12px;
+        }
+        
+        .details {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+        
+        /* Accomplishments List */
+        .accomplishments {
+            list-style: none;
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        
+        .accomplishments li {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 6px;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .accomplishments li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        /* Skills Grid */
+        .skills-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f9f9f9;
+            padding: 12px;
+            border-left: 3px solid #0066cc;
+            border-radius: 4px;
+        }
+        
+        .skill-category h5 {
+            font-size: 13px;
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 6px;
+            margin-top: 0;
+        }
+        
+        .skill-category p {
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        /* Certification Styles */
+        .certification {
+            font-weight: bold;
+            font-size: 13px;
+            color: #000;
+            margin-bottom: 3px;
+        }
+        
+        .issuer {
+            font-size: 12px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                padding: 0.5in;
+            }
+            
+            .section-title {
+                page-break-inside: avoid;
+            }
+            
+            .resume-item {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Screen Print Button */
+        .no-print {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        
+        .print-btn {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .print-btn:hover {
+            background: #004a99;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                gap: 3px;
+            }
+            
+            .contact-info {
+                gap: 15px;
+                font-size: 12px;
+            }
+            
+            .skills-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">RADHA KRISHNA</div>
+            <div class="title">Full Stack Developer</div>
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> krish.ra10.20@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +91 7524933468</span>
+                <span><i class="fas fa-map-marker-alt"></i> India</span>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <section class="resume-section">
+            <h3 class="section-title">
+                <i class="fas fa-briefcase"></i> Experience
+            </h3>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="position">Full Stack Developer</h4>
+                    <span class="company">Techpile Technology Company Inc.</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> Jun 2025 - Present
+                </p>
+                <ul class="accomplishments">
+                    <li>Developed responsive web applications using HTML, CSS, JavaScript, and Bootstrap</li>
+                    <li>Built backend solutions with Python, Django, and SQL databases</li>
+                    <li>Collaborated with cross-functional teams to deliver high-quality projects</li>
+                    <li>Improved application performance by 40% through code optimization</li>
+                </ul>
+            </div>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="position">Web Developer Intern</h4>
+                    <span class="company">Creative Solutions Ltd.</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> Jun 2025 - Aug 2025
+                </p>
+                <ul class="accomplishments">
+                    <li>Completed internship at Techpile Technology</li>
+                    <li>Learned Python programming and responsive design principles</li>
+                    <li>Maintained and debugged existing web applications</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="resume-section">
+            <h3 class="section-title">
+                <i class="fas fa-graduation-cap"></i> Education
+            </h3>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="degree">High School 10th</h4>
+                    <span class="institution">UP Board</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> 2020 - 2021
+                </p>
+                <p class="details">Coursework: English, Hindi, Mathematics, Science, Social Studies</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="degree">Intermediate 12th</h4>
+                    <span class="institution">UP Board</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> 2022 - 2023
+                </p>
+                <p class="details">Coursework: Math, Physics, Chemistry, English, Hindi</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="degree">Diploma in National Council for Promotion of Urdu Language</h4>
+                    <span class="institution">NCPUL</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> 2023 - 2024
+                </p>
+                <p class="details">Coursework: Language, IT Skills</p>
+            </div>
+            <div class="resume-item">
+                <div class="resume-header">
+                    <h4 class="degree">Diploma in Computer Science and Engineering</h4>
+                    <span class="institution">Board of Technical Education Uttar Pradesh Lucknow</span>
+                </div>
+                <p class="duration">
+                    <i class="fas fa-calendar"></i> 2023 - 2026
+                </p>
+                <p class="details">Coursework: Web Development, Database Management, Data Structures</p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="resume-section">
+            <h3 class="section-title">
+                <i class="fas fa-code"></i> Technical Skills
+            </h3>
+            <div class="skills-group">
+                <div class="skill-category">
+                    <h5>Frontend</h5>
+                    <p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
+                </div>
+                <div class="skill-category">
+                    <h5>Backend</h5>
+                    <p>Python, Django, REST APIs, Server-side Development</p>
+                </div>
+                <div class="skill-category">
+                    <h5>Databases</h5>
+                    <p>SQL, Database Design, Query Optimization</p>
+                </div>
+                <div class="skill-category">
+                    <h5>Tools & Others</h5>
+                    <p>Git, GitHub, VS Code, UI/UX Design, Agile Methodology</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="resume-section">
+            <h3 class="section-title">
+                <i class="fas fa-certificate"></i> Certifications
+            </h3>
+            <div class="resume-item">
+                <h4 class="certification">Full Stack Web Development Certification</h4>
+                <p class="issuer">Techpile Technology - 2025</p>
+            </div>
+            <div class="resume-item">
+                <h4 class="certification">AI/ML</h4>
+                <p class="issuer">Techpile Technology - 2025</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+

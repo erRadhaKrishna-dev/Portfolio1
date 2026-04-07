@@ -1,0 +1,458 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block childpage %}
+    <!--hero section start-->
+    <div class="row" id="hero">
+        <div class="col-sm-10 mx-auto">
+            <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Radha Krishna</h1>
+            <h3>And I'm a <span class="text"></span> </h3>
+            <p>
+                I'm also exploring frameworks like Django and Bootstrap to enhance functionality and design.<br>
+                 I love learning new technologies and constantly improving my skills through real-world projects and freelancing.
+            </p>
+            <div class="home-sci">
+                <a href="#" style="--i:8"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" style="--i:9"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" style="--i:10"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" style="--i:11"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="#" class="btn-box">More About Me!</a>
+        </div>
+        </div>
+    </div>
+    <!--hero section end-->
+    <!--about section start-->
+    <div class="row" id="about">
+        <div class="col-sm-10 mx-auto">
+            <div class="row">
+                <h2 class="mx-auto text-center text-mycolor4 title">About<span class="text-mycolor2"> Me</span></h2>
+                <div class="col-10 col-sm-5 mx-auto">
+                    <div class="about-img">
+                        <img src="{% static 'images/aboutimg.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-10 col-sm-7 mx-auto">
+                    <div class="about-text text-mycolor4">
+                        <h4>Full Stack Developer!</h4>
+                        <p >
+                            I’m a passionate Full Stack Developer with a strong foundation in both front-end and back-end technologies. With hands-on experience in HTML, CSS, JavaScript, Python, Django, SQL, and modern frameworks, I specialize in building responsive, user-friendly, and high-performing web applications.<br><br>
+                            From crafting intuitive UI/UX designs to integrating powerful server-side logic and databases, I deliver complete web solutions tailored to client needs. I focus on writing clean, scalable code and always stay updated with the latest development trends to ensure the best results.<br><br>
+                            Whether you're looking for a stunning portfolio website, a dynamic business app, or an end-to-end custom web solution—I’m here to turn ideas into reality.
+                        </p>
+                        <a href="#" class=" btn-box">Know More About Me!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--about section end-->
+    <!--skill section start-->
+    <div class="row pt-5" id="skills">
+        <div class="col-sm-10 mx-auto skills-section">
+            <div class="row position-relative">
+                <h1 class="mx-auto text-center title position-absolute pb-2 skillheading top-0 start-50 translate-middle" style="font-size: 30px;width: 200px;"><span> Skills</span></h1>
+                <div class="col-10 col-sm-6 mx-auto mt-5">
+                <h1 class="mx-auto text-center title mb-5 pb-2 skillheading" style="font-size: 22px;">Technical<span> Skills</span></h1>
+                  <div class="technical-bars text-start">
+                    <div class="bar"><i class="fa-brands fa-html5" style="color: #c95d2e;"></i>
+                        <div class="skill-name">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-line html">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i class="fa-brands fa-css3" style="color: #147bbc;"></i>
+                        <div class="skill-name">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-line css">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i class="fa-brands fa-js" style="color: #b0bc1e;"></i>
+                        <div class="skill-name">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="progress-line javascript">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="bar"><i class="fa-brands fa-python" style="color: #c32ec9;"></i>
+                        <div class="skill-name">
+                            <span>Python</span>
+                        </div>
+                        <div class="progress-line python">
+                            <span></span>
+                        </div>
+                    </div>
+                  </div>  
+                </div>
+                <div class="col-10 col-sm-6 mx-auto mt-5">
+                    <h1 class="mx-auto text-center title mb-5 pb-2 skillheading" style="font-size: 22px;">Professional<span> Skills</span></h1>
+                        <div class="skills-container">
+                            <div class="skill mb-5">
+                                <canvas id="creativityChart" width="150" height="150"></canvas>
+                                <div class="percent-text" id="creativityPercent">0%</div>
+                                <p>Creativity</p>
+                            </div>
+                            <div class="skill mb-5">
+                                <canvas id="CommunicationChart" width="150" height="150"></canvas>
+                                <div class="percent-text" id="communicationPercent">0%</div>
+                                <p>Communication</p>
+                            </div>
+                            <div class="skill mb-5">
+                                <canvas id="problemChart" width="150" height="150"></canvas>
+                                <div class="percent-text" id="problemPercent">0%</div>
+                                <p>Problem Sovling</p>
+                            </div>
+                            <div class="skill mb-5">
+                                <canvas id="teamworkChart" width="150" height="150"></canvas>
+                                <div class="percent-text" id="teamworkPercent">0%</div>
+                                <p>Teamwork</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--skill section end-->
+    <!--services section start-->
+    <div class="row mt-5" id="services">
+        <h2 class="mx-auto text-center text-mycolor4 title">My<span class="text-mycolor2"> Services</span></h2>
+        <div class="col-sm-10  mx-auto mt-5">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/responsive.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-globe text-mycolor2"></i>
+                        <h3>Responsive Web Development</h3>
+                        <p>Modern responsive website built with HTML, CSS, JavaScript and Bootstrap framework for all devices.</p>
+                        <div class="service-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">BootStrap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/ui.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-code text-mycolor2"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Beautiful and intuitive user interface design with modern design principles and user experience focus.</p>
+                        <div class="service-tags">
+                            <span class="tag">UI Design</span>
+                            <span class="tag">UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/python.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-brands fa-python text-mycolor2"></i>
+                        <h3>Python & Django Back-end</h3>
+                        <p>Full-stack backend development with Python, Django framework, and SQL database management solutions.</p>
+                        <div class="service-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/database.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-database text-mycolor2"></i>
+                        <h3>Database Management</h3>
+                        <p>Efficient database design, optimization, and management for reliable data storage and retrieval solutions.</p>
+                        <div class="service-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/web.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-globe text-mycolor2"></i>
+                        <h3>Full Web Development</h3>
+                        <p>Complete end-to-end web development solutions combining frontend, backend, and database technologies.</p>
+                        <div class="service-tags">
+                            <span class="tag">Full-stack</span>
+                            <span class="tag">Development</span>
+                            <span class="tag">Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'images/bugfix.jpg' %}" alt="Service">
+                        <div class="service-overlay">
+                            <a href="#" class="service-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <i class="fa-solid fa-bug text-mycolor2"></i>
+                        <h3>Bug Fixing & Support</h3>
+                        <p>Professional debugging and ongoing support services to ensure your applications run smoothly and reliably.</p>
+                        <div class="service-tags">
+                            <span class="tag">Debugging</span>
+                            <span class="tag">Support</span>
+                            <span class="tag">Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--services section end-->
+    <!--projects section start-->
+    <div class="row mt-5" id="projects">
+        <h2 class="mx-auto text-center text-mycolor4 title mb-5">My<span class="text-mycolor2"> Projects</span></h2>
+        <div class="col-sm-10 mx-auto">
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{% static 'images/web.jpg' %}" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Web Development Project</h3>
+                        <p>Modern responsive website built with HTML, CSS, JavaScript and Bootstrap framework.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{% static 'images/python.jpg' %}" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Python Django Application</h3>
+                        <p>Full-stack web application with Python backend, Django framework, and SQL database.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="{% static 'images/ux.jpg' %}" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>UI/UX Design System</h3>
+                        <p>Beautiful and intuitive user interface design with modern design principles.</p>
+                        <div class="project-tags">
+                            <span class="tag">UI Design</span>
+                            <span class="tag">UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--projects section end-->
+    <!--resume section start-->
+    <div class="row mt-5" id="resume">
+        <h2 class="mx-auto text-center text-mycolor4 title mb-5">My<span class="text-mycolor2"> Resume</span></h2>
+        <div class="col-sm-10 mx-auto">
+            <div class="resume-container">
+                <!-- Experience Section -->
+                <section class="resume-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-briefcase"></i> Experience
+                    </h3>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="position">Full Stack Developer</h4>
+                            <span class="company">Techpile Technology Company Inc.</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> Jun 2025 - Present
+                        </p>
+                        <ul class="accomplishments">
+                            <li>Developed responsive web applications using HTML, CSS, JavaScript, and Bootstrap</li>
+                            <li>Built backend solutions with Python, Django, and SQL databases</li>
+                            <li>Collaborated with cross-functional teams to deliver high-quality projects</li>
+                            <li>Improved application performance by 40% through code optimization</li>
+                        </ul>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="position">Web Developer Intern</h4>
+                            <span class="company">Creative Solutions Ltd.</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> Jun 2025 - Aug 2025
+                        </p>
+                        <ul class="accomplishments">
+                            <li>I have done internship at Techpile Technology</li>
+                            <li>I have learn python programing language and responsive design. Implemented responsive design principles across all projects</li>
+                            <li>Maintained and debugged existing web applications</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="resume-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-graduation-cap"></i> Education
+                    </h3>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="degree">High school 10th</h4>
+                            <span class="institution">UP Board</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> 2020 - 2021
+                        </p>
+                        <p class="details">Relevant Coursework: English,Hindi,Mathematics,Science,Social Study</p>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="degree">Intermediate 12th</h4>
+                            <span class="institution">UP Board</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> 2022 - 2023
+                        </p>
+                        <p class="details">Relevant Coursework: Math, Physics, Chemistry, English,Hindi</p>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="degree">Diploma in National Council for Promotion of Urdu Language</h4>
+                            <span class="institution">NCPUL</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> 2023 - 2024
+                        </p>
+                        <p class="details">Relevant Coursework: Language,IT skills</p>
+                    </div>
+                    <div class="resume-item">
+                        <div class="resume-header">
+                            <h4 class="degree">Diploma in Computer Science and engineering</h4>
+                            <span class="institution">Board of Technical Education Uttar Pradesh Lucknow</span>
+                        </div>
+                        <p class="duration">
+                            <i class="fa-solid fa-calendar"></i> 2023 - 2026
+                        </p>
+                        <p class="details">Relevant Coursework: Web Development, Database Management, Data Structures</p>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section class="resume-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-code"></i> Technical Skills
+                    </h3>
+                    <div class="skills-group">
+                        <div class="skill-category">
+                            <h5>Frontend</h5>
+                            <p>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Backend</h5>
+                            <p>Python, Django, REST APIs, Server-side Development</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Databases</h5>
+                            <p>SQL, Database Design, Query Optimization</p>
+                        </div>
+                        <div class="skill-category">
+                            <h5>Tools & Others</h5>
+                            <p>Git, GitHub, VS Code, UI/UX Design, Agile Methodology</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications Section -->
+                <section class="resume-section">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-certificate"></i> Certifications
+                    </h3>
+                    <div class="resume-item">
+                        <h4 class="certification">Full Stack Web Development Certification</h4>
+                        <p class="issuer">Techpile Technology - 2025</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4 class="certification">AI/ML</h4>
+                        <p class="issuer">Techpile Technology - 2025</p>
+                    </div>
+                </section>
+
+                <!-- Download Button -->
+                <div class="resume-download">
+                    <a href="{% url 'download_resume' %}" class="btn-box" download>
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--resume section end-->
+    <div class="row" id="contact">
+        <div class="col-12 col-lg-12" id="contact-form">
+        <h1 class="mx-auto text-center title mb-2 pb-2 " style="font-size: 25px; font-weight: 500 !important;">Contact<span class="text-mycolor2"> US <i class="fa-solid fa-phone fa-spin"></i></span></h1>
+            <form method="post" >
+                <input type="text" name="name" id="" class="form-control" placeholder="Enter your name" required>
+                <input type="tel" name="mobile" id="" class="form-control" placeholder="Enter your mobile No." oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="10" required>
+                <input type="email" name="email" id="" class="form-control" placeholder="example@gmail.com" required>
+                <textarea name="message" id="" placeholder="Enter your message"></textarea>
+            <input type="checkbox" style="height: 20px; width: 25px;"/> <span> <sup class="fs-3 text-danger mt-3">**</sup> </span>I agree that my submitted data is being collected and stored.
+            <button class="form-control bg-mycolor2 fs-4 btn-box mt-2">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock%}
