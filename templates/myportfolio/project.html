@@ -1,194 +1,127 @@
+
+
 {% extends 'base.html' %}
 {% load static %}
 {% block childpage %}
-<style>
-    .project-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.4s;
-  backdrop-filter: blur(10px);
-}
 
-.project-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-}
+<section id="projects" class="py-5 mt-5 mb-5">
+    <div class="container">
 
-.project-img {
-  overflow: hidden;
-}
+        <div class="text-center mt-5 pb-4">
+            <h2 class="fw-bold pro_heading1">
+                🚀 My Projects
+            </h2>
 
-.project-img img {
-  transition: 0.5s;
-}
-
-.project-card:hover img {
-  transform: scale(1.1);
-}
-
-</style>
-<!-- Project content goes here -->
- <section id="projects" class="py-5 mt-5">
-  <div class="container">
-
-    <!-- Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-white">🚀 My Projects</h2>
-      <p class="text-light">Some of my real-world work and hands-on development projects</p>
-    </div>
-
-    <div class="row g-4">
-
-      <!-- Project 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          
-          <!-- Image -->
-          <div class="project-img">
-            <img src="{% static 'images/project1.jpg' %}" class="img-fluid" alt="project">
-          </div>
-
-          <!-- Content -->
-          <div class="p-3">
-            <h5 class="text-white">E-Learning Platform</h5>
-            <p class="text-light small">
-              A full-stack learning platform with authentication, course system, quiz, payment, and certificate generation.
+            <p class="pro_heading2">
+                Total Projects : {{ total_projects }}
             </p>
+        </div>
 
-            <!-- Tech -->
-            <div class="mb-2">
-              <span class="badge bg-primary">Django</span>
-              <span class="badge bg-info text-dark">React</span>
-              <span class="badge bg-secondary">SQL</span>
+        <div class="row g-4">
+
+            {% for project in projects %}
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="project-card h-100">
+
+                    <div class="project-img">
+                        <img src="{{ project.image.url }}"
+                             class="img-fluid"
+                             alt="{{ project.title }}">
+                    </div>
+
+                    <div class="p-3">
+
+                        <h5>{{ project.title }}</h5>
+
+                        <p class="small">
+                            {{ project.description|truncatechars:120 }}
+                        </p>
+
+                        <div class="mb-3">
+
+                            {% if project.technologies1 %}
+                            <span class="badge bg-primary">
+                                {{ project.technologies1 }}
+                            </span>
+                            {% endif %}
+
+                            {% if project.technologies2 %}
+                            <span class="badge bg-success">
+                                {{ project.technologies2 }}
+                            </span>
+                            {% endif %}
+
+                            {% if project.technologies3 %}
+                            <span class="badge bg-warning text-dark">
+                                {{ project.technologies3 }}
+                            </span>
+                            {% endif %}
+
+                            {% if project.technologies4 %}
+                            <span class="badge bg-info text-dark">
+                                {{ project.technologies4 }}
+                            </span>
+                            {% endif %}
+
+                            {% if project.technologies5 %}
+                            <span class="badge bg-secondary">
+                                {{ project.technologies5 }}
+                            </span>
+                            {% endif %}
+
+                            {% if project.technologies6 %}
+                            <span class="badge bg-dark">
+                                {{ project.technologies6 }}
+                            </span>
+                            {% endif %}
+
+                        </div>
+
+                        <div class="d-flex gap-2">
+
+                            {% if project.live_link %}
+                            <a href="{{ project.live_link }}"
+                               target="_blank"
+                               class="btn btn-primary btn-sm">
+
+                                <i class="fa-solid fa-globe"></i>
+                                Live Demo
+
+                            </a>
+                            {% endif %}
+
+                            {% if project.github_link %}
+                            <a href="{{ project.github_link }}"
+                               target="_blank"
+                               class="gitbtn">
+
+                                <i class="fa-brands fa-github"></i>
+                                GitHub
+
+                            </a>
+                            {% endif %}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- Buttons -->
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-sm btn-primary">Live Preview</a>
-              <a href="#" class="btn btn-sm btn-outline-light">GitHub</a>
+            {% empty %}
+
+            <div class="col-12 text-center">
+                <h4>No Projects Available</h4>
             </div>
-          </div>
+
+            {% endfor %}
 
         </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="{% static 'images/project2.jpg' %}" class="img-fluid" alt="project">
-          </div>
-
-          <div class="p-3">
-            <h5 class="text-white">Portfolio Website</h5>
-            <p class="text-light small">
-              Personal portfolio with modern UI, animations, responsive design, and project showcase.
-            </p>
-
-            <div class="mb-2">
-              <span class="badge bg-warning text-dark">HTML</span>
-              <span class="badge bg-info text-dark">CSS</span>
-              <span class="badge bg-success">JavaScript</span>
-            </div>
-
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-sm btn-primary">Live Preview</a>
-              <a href="#" class="btn btn-sm btn-outline-light">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="{% static 'images/project3.jpg' %}" class="img-fluid" alt="project">
-          </div>
-
-          <div class="p-3">
-            <h5 class="text-white">Calculator</h5>
-            <p class="text-light small">
-              A simple calculator with basic arithmetic operations.
-            </p>
-
-            <div class="mb-2">
-              <span class="badge bg-primary">HTML</span>
-              <span class="badge bg-secondary">CSS</span>
-              <span class="badge bg-dark">JavaScript</span>
-            </div>
-
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-sm btn-primary">Live Preview</a>
-              <a href="#" class="btn btn-sm btn-outline-light">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--Project 3-->
-       <!-- Project 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="{% static 'images/project2.jpg' %}" class="img-fluid" alt="project">
-          </div>
-
-          <div class="p-3">
-            <h5 class="text-white">Resume Builder</h5>
-            <p class="text-light small">
-                    A simple resume builder with modern UI and responsive design.
-            </p>
-
-            <div class="mb-2">
-              <span class="badge bg-warning text-dark">HTML</span>
-              <span class="badge bg-info text-dark">CSS</span>
-              <span class="badge bg-success">JavaScript</span>
-              <span class="badge bg-light text-dark">Bootstrap</span>
-              <span class="badge bg-primary">Django</span>
-            </div>
-
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-sm btn-primary">Live Preview</a>
-              <a href="#" class="btn btn-sm btn-outline-light">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project 4 -->
-      <!-- Project 5 -->
-       <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="project-img">
-            <img src="{% static 'images/project2.jpg' %}" class="img-fluid" alt="project">
-          </div>
-
-          <div class="p-3">
-            <h5 class="text-white">Grocworld</h5>
-            <p class="text-light small">
-                    A simple grocery website with modern UI and responsive design.
-            </p>
-
-            <div class="mb-2">
-              <span class="badge bg-warning text-dark">HTML</span>
-              <span class="badge bg-info text-dark">CSS</span>
-              <span class="badge bg-success">JavaScript</span>
-              <span class="badge bg-light text-dark">Tailwind</span>
-              <span class="badge bg-primary">React</span>
-            </div>
-
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-sm btn-primary">Live Preview</a>
-              <a href="#" class="btn btn-sm btn-outline-light">GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Project 5 -->
 
     </div>
-
-  </div>
 </section>
 
 {% endblock %}

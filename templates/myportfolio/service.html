@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block childpage %}
+<style>
+    @media screen and (max-width: 768px) {
+        #services {
+            margin-top: 90px !important;
+            padding: 20px;
+        }
+  .title {
+    font-size: 28px;
+  }
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .service-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .service-content {
+        align-items: center;
+    }
+    .service-tags {
+        justify-content: center;
+    }
+    .service-link {
+        font-size: 14px;
+    }
+}
+</style>
 <!--services section start-->
     <div class="row mt-5 pt-5" id="services">
-        <h2 class="mx-auto text-center text-mycolor4 title">My<span class="text-mycolor2"> Services</span></h2>
+        <h2 class="mx-auto text-center text-mycolor4 title">My<span class="text-mycolor2"> <i class="fa-solid fa-gears"></i> Services</span></h2>
         <div class="col-sm-10  mx-auto mt-5">
             <div class="services-grid">
                 <div class="service-card">

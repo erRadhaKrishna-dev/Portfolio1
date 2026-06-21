@@ -1,30 +1,56 @@
-from django.shortcuts import render
-from django.http import HttpResponse, FileResponse
-from django.templatetags.static import static
-from django.core.mail import send_mail
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.http import HttpResponse
 from django.conf import settings
-import os
-
 from myportfolio.forms import ContactForm
+from django.contrib.auth.decorators import login_required
 
-from myportfolio.forms import ContactForm
+from myportfolio.models import Hobby, Project, Service, Skill
 
 # Create your views here.
+
+
+
+
 
 def home(request):
     return render(request,"myportfolio/home.html")
 def about(request):
-    return render(request,"myportfolio/about.html")
+    hobbies = Hobby.objects.all().order_by('id')
+
+    context = {
+        'projects_completed': Project.objects.count(),
+        'happy_clients': 30,  
+        'years_experience': 5, 
+        'hobbies': hobbies,
+        'hobbys_count': hobbies.count(),
+    }
+    return render(request,"myportfolio/about.html", context)
 def service(request):
-    return render(request,"myportfolio/service.html")
+    services = Service.objects.all().order_by('id')
+    context = {
+        'services': services,
+        'total_services': services.count()
+    }
+    return render(request,"myportfolio/service.html", context)
 def skill(request):
-    return render(request,"myportfolio/skill.html")
+    skills = Skill.objects.all().order_by('id')
+    context = {
+        'skills': skills,
+        'total_skills': skills.count()
+    }
+    
+    return render(request,"myportfolio/skill.html", context)
 def project(request):
-    return render(request,"myportfolio/project.html")
+    projects = Project.objects.all().order_by('id')
+    
+    context = {
+        'projects': projects,
+        'total_projects': projects.count(),
+    }
+    return render(request,"myportfolio/project.html", context)
 
 def download_resume(request):
-    """Download resume as PDF or HTML"""
-    # Try to use wkhtmltopdf/weasyprint for PDF conversion
     try:
         from django.template.loader import render_to_string
         from weasyprint import HTML, CSS
@@ -46,34 +72,14 @@ def download_resume(request):
             'is_download': True
         })
 
-
-
 def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact = form.save()
-
-            # 🔥 Send Email
-            send_mail(
-                subject=f"New Contact: {contact.subject}",
-                message=f"""
-Name: {contact.name}
-Email: {contact.email}
-
-Message:
-{contact.message}
-                """,
-                from_email=settings.EMAIL_HOST_USER,
-                recipient_list=['krish.ra10.20@gmail.com'],
-            )
-
-            return render(request, 'myportfolio/contact.html', {
-                'form': ContactForm(),
-                'success': True
-            })
+            form.save() 
+            messages.success(request, "Message sent successfully!") 
+            return redirect('myportfolio/contact.html')
     else:
         form = ContactForm()
-
+    
     return render(request, 'myportfolio/contact.html', {'form': form})
-

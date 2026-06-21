@@ -2,115 +2,226 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RKDev</title>
+    <meta name="theme-color" content="#0a1428">
+    <meta name="description"
+        content="Full Stack Developer portfolio - Building responsive, accessible web applications">
+    <meta name="keywords" content="Full Stack Developer, Django, Python, JavaScript, Web Development">
+    <meta name="author" content="Radha Krishna">
+    <meta property="og:title" content="Radha Krishna - Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer portfolio showcasing projects and services">
+    <meta property="og:type" content="website">
+
+    <title>RKDev - Full Stack Developer Portfolio</title>
     <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png">
-    <!--styling start-->
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        as="style">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-    <!--styling end -->
-    <!--script files start-->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-    <script src="{% static 'js/brands.js' %}"></script>
-    <!--script files end-->
+
+    <!-- No-JS fallback -->
+    <noscript>
+        <style>
+            .reveal {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .progress-line.visible span {
+                transform: scaleX(1) !important;
+            }
+        </style>
+    </noscript>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
 </head>
+
 <body>
-    <div class="container-fluid">
-    <!--header section start-->
-            <div class="row mx-auto" id="bheader">
-                <div class="col-12 col-lg-3 mx-auto text-right fs-2 pt-2 text-light">
-                    Radha Krishna
-                </div>
-                <div class="col-12 col-lg-9" style="padding-left: 50px; padding-right: 0px !important; ">
-                    <nav class="navbar navbar-expand-lg navbar-dark fs-4">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse text-center" id="navbarNav">
-                                <ul class="navbar-nav mx-auto ">
-                                    <li>
-                                        <a href="/home/" class="nav-link active text-mycolor4" style="--i:1">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="/about/" class="nav-link active text-mycolor4" style="--i:2" >About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="/service/" class="nav-link active text-mycolor4" style="--i:3" >Service</a>
-                                    </li>
-                                    <li>
-                                        <a href="/skill/" class="nav-link active text-mycolor4" style="--i:5" >Skill</a>
-                                    </li>
-                                    <li>
-                                        <a href="/project/" class="nav-link active text-mycolor4" style="--i:5" >Projects</a>
-                                    </li>
-                                    <li>
-                                        <a href="/contact/" class="nav-link active text-mycolor4" style="--i:6" >Contact Us</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header Navigation -->
+    <header class="container-fluid" id="bheader" role="banner">
+        <div class="col-12 col-lg-3 mx-auto text-right fs-2 pt-2" aria-label="Site Logo">
+            Radha Krishna
+        </div>
+
+        <nav class="col-12 col-lg-9" style="padding-left: 50px; padding-right: 0px !important;"
+            aria-label="Main Navigation">
+            <div class="navbar navbar-expand-lg navbar-dark fs-4">
+                <div class="container-fluid">
+                    <!-- Mobile Toggle Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse text-center" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <i class="fa-solid fa-house me-1  text-mycolor4" aria-hidden="true"></i>
+                                <a href="/home/" class="nav-link active text-mycolor4">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fa-solid fa-circle-info me-1 ms-2 text-mycolor4" aria-hidden="true"></i>
+                                <a href="/about/" class="nav-link active text-mycolor4">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fa-solid fa-gears me-1 ms-2 text-mycolor4" aria-hidden="true"></i>
+                                <a href="/service/" class="nav-link active text-mycolor4">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fa-solid fa-code me-1 ms-2 text-mycolor4" aria-hidden="true"></i>
+                                <a href="/skill/" class="nav-link active text-mycolor4">Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fa-solid fa-briefcase me-1 ms-2 text-mycolor4" aria-hidden="true"></i>
+                                <a href="/project/" class="nav-link active text-mycolor4">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <i class="fa-solid fa-envelope me-1 ms-2 text-mycolor4" aria-hidden="true"></i>
+                                <a href="/contact/" class="nav-link active text-mycolor4">Contact Us</a>
+                            </li>
+
+                            <!-- Theme Toggle Button -->
+                            <li class="nav-item ms-3">
+                                <button id="themeToggle" class="theme-btn" type="button"
+                                    title="Toggle between light and dark theme (Alt + T)" aria-label="Toggle theme">
+                                    <i class="fa-solid fa-moon"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!--header section end-->
+        </nav>
+    </header>
 
-    
-    <div class="container p-0">
+    <!-- Main Content -->
+    <main id="main-content" class="container p-0">
         <div class="row mx-auto p-0">
             {% block childpage %}
-
+            <!-- Page content goes here -->
             {% endblock %}
         </div>
-    </div>
-    
+    </main>
 
-<div class="row" id="ufooter">
+    <!-- Footer -->
+    <footer class="row" id="ufooter" role="contentinfo">
         <div class="col-12">
             <div class="container">
                 <div class="row ufooter-container py-3">
+                    <!-- About Section -->
                     <div class="col-12 col-md-6 col-lg-4 footer-col">
-                        <h3 class="footer-title text-mycolor4">About <span class="text-mycolor2">Us</span></h3>
-                        <p class="text-mycolor4 ">I’m a Full Stack Developer focused on building responsive, accessible and beautiful user experiences using Django, Bootstrap and modern front-end tooling.</p>
-                        <div class=" mt-3 home-sci">
-                            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" aria-label="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" aria-label="linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <h3 class="footer-title text-mycolor4">
+                            About <span class="text-mycolor2">Us</span>
+                        </h3>
+                        <p class="text-mycolor4">
+                            I'm a Full Stack Developer focused on building responsive, accessible
+                            and beautiful user experiences using Django, Bootstrap and modern front-end tooling.
+                        </p>
+                        <div class="mt-3 home-sci icon-container" aria-label="Social media links">
+                            <a href="#" aria-label="Facebook" title="Visit our Facebook page">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="#" aria-label="WhatsApp" title="Contact us on WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram" title="Follow us on Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="LinkedIn" title="Connect on LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
                         </div>
                     </div>
+
+                    <!-- Quick Links Section -->
                     <div class="col-6 col-md-6 col-lg-4 footer-col">
-                        <h4 class="footer-title text-mycolor4">Quick <span class="text-mycolor2">Links</span></h4>
+                        <h4 class="footer-title text-mycolor4">
+                            Quick <span class="text-mycolor2">Links</span>
+                        </h4>
                         <ul class="list-unstyled footer-links">
                             <li><a href="/home/">Home</a></li>
                             <li><a href="/about/">About</a></li>
                             <li><a href="/service/">Services</a></li>
                             <li><a href="/skill/">Skills</a></li>
+                            <li><a href="/project/">Projects</a></li>
                             <li><a href="/contact/">Contact</a></li>
                         </ul>
                     </div>
+
+                    <!-- Contact Section -->
                     <div class="col-6 col-md-6 col-lg-4 footer-col">
                         <h4 class="footer-title text-mycolor4">Contact</h4>
-                        <p class="text-mycolor4 small mb-1"><i class="fa-regular fa-envelope me-2"></i>krish.ra10.20@gmail.com</p>
-                        <p class="text-mycolor4 small mb-1"><i class="fa-solid fa-phone me-2"></i>+91 7524933468</p>
-                        <p class="text-mycolor4 small mb-0"><i class="fa-solid fa-location-dot me-2"></i>Unnao, India</p>
+                        <p class="text-mycolor4 small mb-1">
+                            <i class="fa-regular fa-envelope me-2" aria-hidden="true"></i>
+                            <a href="mailto:krish.ra10.20@gmail.com"
+                                class="text-decoration-none">krish.ra10.20@gmail.com</a>
+                        </p>
+                        <p class="text-mycolor4 small mb-1">
+                            <i class="fa-solid fa-phone me-2" aria-hidden="true"></i>
+                            <a href="tel:+917524933468" class="text-decoration-none">+91 7524933468</a>
+                        </p>
+                        <p class="text-mycolor4 small mb-0">
+                            <i class="fa-solid fa-location-dot me-2" aria-hidden="true"></i>
+                            Unnao, India
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
+
+    <!-- Footer Bottom -->
     <div class="row" id="bfooter">
-        <div class="col-sm-12 mx-auto text-center text-light fs-5">
-            Developed and Design by RADHA KRISHNA <span class="text-info ps-3">&copy;RK</span> 
+        <div class="col-sm-12 mx-auto text-center fs-5">
+            Developed and Designed by <strong>RADHA KRISHNA</strong>
+            <span class="text-info ps-3">&copy; 2024 RK</span>
         </div>
     </div>
-    </div>
-    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Scroll to Top Button -->
+    <button id="topBtn" type="button" title="Scroll to top (Ctrl + Home)" aria-label="Scroll to top"
+        class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3 text-center align-items-center p-3"
+        style="display: none; z-index: 1000;">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/brands.js' %}"></script>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const today = new Date().toDateString();
+
+    if (localStorage.getItem("lastVisit") !== today) {
+        Swal.fire({
+            title: "Welcome 👋",
+            text: "Thanks for visiting my portfolio!",
+            icon: "success",
+            confirmButtonText: "Explore 🚀"
+        });
+
+        localStorage.setItem("lastVisit", today);
+    }
+});
+    </script>
 </body>
+
+</html>

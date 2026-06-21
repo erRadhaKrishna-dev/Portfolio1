@@ -129,19 +129,19 @@
 				<div class="row text-center">
 					<div class="col-6 col-md-3 card-1">
 						<div>
-							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">50+</h3>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">{{ projects_completed }}+</h3>
 							<p class="text-mycolor4">Projects Completed</p>
 						</div>
 					</div>
 					<div class="col-6 col-md-3 card-1">
 						<div>
-							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">30+</h3>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">{{ happy_clients }}+</h3>
 							<p class="text-mycolor4">Happy Clients</p>
 						</div>
 					</div>
 					<div class="col-6 col-md-3 card-1">
 						<div>
-							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">5+</h3>
+							<h3 class="text-mycolor2" style="font-size: 32px; font-weight: 700;">{{ years_experience }}+</h3>
 							<p class="text-mycolor4">Years Experience</p>
 						</div>
 					</div>
@@ -154,7 +154,20 @@
 				</div>
 			</div>
 		</div>
+<!-- End of Stats Section -->
+ <!--Hobbies Section start-->
+<h2 class="text-center text-mycolor4 mb-4 mt-4">My Hobbies</h2>
+ {% if hobbies %}
+ {% for hobby in hobbies %}
 
+ <div class="col-md-4 mb-4 card-1">
+ <i class="{{ hobby.icon }} text-mycolor2" style="font-size:32px; margin-bottom:12px;"></i>
+ <h5 class="text-mycolor4">{{ hobby.name }}</h5>
+ <p class="text-mycolor4">{{ hobby.description }}</p>
+ </div>
+ {% endfor %}
+ {% endif %}
+ <!--Hobbies Section end-->
 		<!-- Tech Stack Section -->
 		<div class="row mt-5"
 			style="background: rgba(0,233,245,0.05); padding: 40px 0; border-top: 1px solid rgba(0,233,245,0.2);">
@@ -198,8 +211,8 @@
 				<p class="text-muted mb-4" style="font-size: 16px;">Let's collaborate and create something amazing
 					together.</p>
 				<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-					<a href="#contact-form" class="btn-box">Get In Touch</a>
-					<a href="#services" class="btn-box"
+					<a href="/contact/" class="btn-box">Get In Touch</a>
+					<a href="/service/" class="btn-box"
 						style="background:transparent;border:1px solid #0ef;color:#0ef;">View My Services</a>
 				</div>
 			</div>

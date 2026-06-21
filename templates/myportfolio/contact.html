@@ -1,86 +1,50 @@
 {% extends 'base.html' %}
 {% block childpage %}
 <style>
-
-
-
-.contact-card {
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-}
-
-.form-control {
-  background: transparent;
-  color: white;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.form-control::placeholder {
-  color: #ccc;
-}
-
-.form-control:focus {
-  background: transparent;
-  color: white;
-  border-color: #00c6ff;
-  box-shadow: none;
-}
+  @media screen and (max-width: 768px) {
+    #contact-form {
+      margin-top: 90px !important;
+      padding: 20px;
+    }
+    .title {
+      font-size: 28px;
+    }
+  }
 </style>
-
-<section class="contact-section py-5 mt-5">
-  <div class="container">
-
-    <!-- Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-white">📩 Contact Me</h2>
-      <p class="text-light">Feel free to reach out for projects or collaboration</p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-
-        <div class="contact-card p-4">
-
-          {% if success %}
-            <div class="alert alert-success">
-              ✅ Message sent successfully!
-            </div>
-          {% endif %}
-
-          <form method="POST">
+<div class="row" id="contact">
+    <div class="col-12 col-lg-12 mt-5" id="contact-form">
+        <h1 class="mx-auto text-center title mb-2 pb-2 " style="font-size: 25px; font-weight: 500 !important;">
+            Contact<span class="text-mycolor2"> US <i class="fa-solid fa-phone fa-spin"></i></span></h1>
+        <form method="post">
             {% csrf_token %}
-
-            <div class="mb-3">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-            </div>
-
-            <div class="mb-3">
-              <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary w-100">
-              Send Message 🚀
-            </button>
-
-          </form>
-
-        </div>
-
-      </div>
+            <input type="text" name="name" id="" class="form-control" placeholder="Enter your name" required>
+            <input type="tel" name="mobile" id="" class="form-control" placeholder="Enter your mobile No."
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="10" required>
+            <input type="email" name="email" id="" class="form-control" placeholder="example@gmail.com" required>
+            <input type="text" name="subject" id="" class="form-control" placeholder="Enter your subject" required>
+            <textarea name="message" id="" placeholder="Enter your message"></textarea>
+            <input type="checkbox" style="height: 20px; width: 25px;" /> <span> <sup
+                    class="fs-3 text-danger mt-3">**</sup> </span>I agree that my submitted data is being collected and
+            stored.
+            <button class="form-control bg-mycolor2 fs-4 btn-box mt-2">Submit</button>
+        </form>
     </div>
+</div>
 
-  </div>
-</section>
 
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            Swal.fire({
+                title: 'Success!',
+                text: '{{ message }}',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        </script>
+    {% endfor %}
+{% endif %}
 
 
 {% endblock %}
