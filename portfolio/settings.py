@@ -31,7 +31,7 @@ TEMPLATE_DIR=BASE_DIR/"templates"
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-secret-key-here')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False") == "False"
 
 ALLOWED_HOSTS = ['*']
 
@@ -61,6 +61,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
+
+
+handler400 = 'your_project.views.bad_request'
+handler404 = 'your_project.views.page_not_found'
+handler503 = 'your_project.views.service_unavailable'
+
 
 TEMPLATES = [
     {

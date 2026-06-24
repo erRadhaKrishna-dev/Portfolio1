@@ -17,11 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
-from portfolio import settings
+from portfolio import settings, views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("myportfolio.urls")),
+    path('test-404/', views.page_not_found),
+    path('test-400/', views.bad_request),
+    path('test-503/', views.service_unavailable),
  ]
 
 
@@ -30,3 +33,9 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT
     )
+
+
+
+handler400 = views.bad_request
+handler404 = views.page_not_found
+handler503 = views.service_unavailable

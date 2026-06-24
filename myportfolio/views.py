@@ -6,7 +6,7 @@ from myportfolio.forms import ContactForm
 from django.contrib.auth.decorators import login_required
 
 from myportfolio.models import Hobby, Project, Service, Skill
-
+from django.views.decorators.csrf import requires_csrf_token
 # Create your views here.
 
 
@@ -78,8 +78,20 @@ def contact(request):
         if form.is_valid():
             form.save() 
             messages.success(request, "Message sent successfully!") 
-            return redirect('myportfolio/contact.html')
+            return redirect('/contact')
     else:
         form = ContactForm()
     
     return render(request, 'myportfolio/contact.html', {'form': form})
+
+
+
+@requires_csrf_token
+def bad_request(request, exception=None):
+    return render(request, 'error/400.html', status=400)
+
+def page_not_found(request, exception=None):
+    return render(request, 'error/404.html', status=404)
+
+def service_unavailable(request, exception=None):
+    return render(request, 'error/503.html', status=503)

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: #1a202c;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .error-visual {
+            margin-bottom: 3rem;
+            perspective: 1000px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .error-background {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .error-number {
+            font-size: 160px;
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.05em;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotateX(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px) rotateX(5deg);
+                opacity: 0.95;
+            }
+        }
+
+        .content {
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #1a202c;
+        }
+
+        p {
+            font-size: 16px;
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            background: #ffffff;
+            color: #1a202c;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #f7fafc;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
+        }
+
+        .btn:hover {
+            border-color: #cbd5e0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:active {
+            transform: translateY(0px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary::before {
+            background: linear-gradient(135deg, #5568d3 0%, #6a4299 100%);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .search-box {
+            margin: 2rem 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background: #5568d3;
+        }
+
+        @media (max-width: 600px) {
+            .error-number {
+                font-size: 100px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+
+            .cta-group {
+                gap: 10px;
+            }
+
+            .btn {
+                min-width: 160px;
+                padding: 10px 24px;
+                font-size: 15px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-visual">
+            <div class="error-background"></div>
+            <div class="error-number">404</div>
+        </div>
+
+        <div class="content">
+            <h1>Page not found</h1>
+            <p>Sorry, the page you're looking for doesn't exist or has been moved. Let's help you get back on track.</p>
+        </div>
+        <div class="cta-group">
+            <a href="/home/" class="btn btn-primary">← Back to Home</a>
+            <a href="/home/" class="btn">View Portfolio</a>
+        </div>
+
+        <div class="footer-text">
+            Error code: 404 — Page not found
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm) {
+                // Replace with your actual search URL or functionality
+                window.location.href = `/?search=${encodeURIComponent(searchTerm)}`;
+            }
+        }
+
+        // Allow Enter key to perform search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -10,4 +10,7 @@ urlpatterns=[
     path("project/",views.project),
     path("contact/",views.contact),
     path("download-resume/",views.download_resume, name='download_resume'),
+    
     ]
+
+
